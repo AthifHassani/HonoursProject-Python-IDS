@@ -96,7 +96,7 @@ def calculate_accuracy():
         logging.info("[METRIC] Accuracy: Not enough data for calculation")
 
 def packet_handler(pkt): # Checks if it's a Wi-Fi packet
-    global true_positives, false_positives, start_time, detection_time_recorded
+    global true_positives, false_positives, true_negatives, start_time, detection_time_recorded
 
     if pkt.haslayer(Dot11Beacon):  # Only consider Beacon frames (to avoid handling data frames)
         ssid = pkt.info.decode(errors='ignore') if hasattr(pkt, "info") else None
