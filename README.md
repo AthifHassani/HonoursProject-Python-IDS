@@ -109,6 +109,7 @@ The IDS was evaluated in a controlled, virtualized testbed rather than a live pr
 - A legitimate AP (an AC750 router) represented the trusted network.
 - A rogue AP was created using `airbase-ng`, broadcasting a spoofed SSID (`UniTest_AP`) to simulate an Evil Twin, including tests where the attacker spoofed the legitimate AP's MAC address.
 - The IDS was run on a victim-side Kali Linux VM to monitor for the attack.
+- `airodump-ng` was used on the victim side as a quick sanity check during testing, confirming beacon frames from the rogue AP were actually reaching the victim VM's interface before relying on the IDS's own detection output.
 
 ## Limitations and Known Issues
 
